@@ -1,16 +1,15 @@
-
 import React from 'react';
 import classnames from 'classnames';
 
-// import './page-loader.css';
+import Segment from '../Segment/Segment';
+import Loader from '../Loader/Loader';
+
+import './page-loader.css';
 
 export default function PageLoader({ className, children, ...other }) {
   return (
-    <div className={classnames('ui segment', className)} {...other}>
-      <div className="ui active centered inline loader" />
-      <p />
-      <p />
-    </div>
+    <Segment className={classnames('jr-page-loader', className)} {...other}>
+      <Loader>{children || 'Loading'}</Loader>
+    </Segment>
   );
 }
-// <div class="ui active centered inline loader"></div>
